@@ -21,15 +21,25 @@ class Config:
         "text-frame": "./models/yolo8l_50epochs/best.pt"
     }
     
-    # Supported languages (English only)
+    # Supported languages (extended for Speechify)
     SUPPORTED_LANGUAGES = {
-        "en": {"name": "English", "ocr": "eng", "tts": "en-US"}
+        "en": {"name": "English", "ocr": "eng", "tts": "en-US"},
+        "fr-FR": {"name": "French", "ocr": "fra", "tts": "fr-FR"},
+        "de-DE": {"name": "German", "ocr": "deu", "tts": "de-DE"},
+        "es-ES": {"name": "Spanish", "ocr": "spa", "tts": "es-ES"},
+        "pt-BR": {"name": "Portuguese (Brazil)", "ocr": "por", "tts": "pt-BR"},
+        "pt-PT": {"name": "Portuguese (Portugal)", "ocr": "por", "tts": "pt-PT"},
+        "ja-JP": {"name": "Japanese", "ocr": "jpn", "tts": "ja-JP"},
+        "it-IT": {"name": "Italian", "ocr": "ita", "tts": "it-IT"},
+        "ru-RU": {"name": "Russian", "ocr": "rus", "tts": "ru-RU"},
+        "zh-CN": {"name": "Chinese (Simplified)", "ocr": "chi_sim", "tts": "zh-CN"}
     }
     
     # Default settings
     DEFAULT_LANGUAGE = "en"  # English only
     DEFAULT_YOLO_MODEL = os.getenv("DEFAULT_YOLO_MODEL", "frame")
     TTS_SPEECH_RATE = int(os.getenv("TTS_SPEECH_RATE", "150"))
+    TTS_PROVIDER = os.getenv("TTS_PROVIDER", "speechify")  # speechify or elevenlabs
     
     # Confidence thresholds
     YOLO_CONFIDENCE_THRESHOLD = float(os.getenv("YOLO_CONFIDENCE_THRESHOLD", "0.25"))
