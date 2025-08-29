@@ -14,7 +14,7 @@ class MangaAIApp:
         self.config = Config()
         self.frame_detector = FrameDetector()
         self.ocr_processor = OCRProcessor()
-        self.tts_generator = TTSGenerator()
+        self.tts_generator = TTSGenerator(tts_provider=self.config.TTS_PROVIDER)
         self.llm_vision = LLM_Vision()
         self.llm_narrator = LLM_Narrator()
         
